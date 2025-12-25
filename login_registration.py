@@ -47,6 +47,8 @@ def register():
     if os.path.exists(FILE_NAME):
         with open(FILE_NAME, "r") as file:
             for line in file:
+                if ":" not in line:
+                    continue
                 stored_user = line.split(":")[0]
                 if stored_user == username:
                     print(" User already exists")
@@ -68,7 +70,10 @@ def login():
         return
     with open(FILE_NAME, "r") as file:
         for line in file:
-            stored_user, stored_pass = line.strip().split(":")
+            try:
+                stored_user, stored_pass = line.strip().split(":")
+            except ValueError:
+                continue
             if stored_user == username and stored_pass == password:
                 print(" Login successful")
                 return
@@ -97,7 +102,11 @@ def forgot_password():
 
     with open(FILE_NAME, "w") as file:
         for line in lines:
-            stored_user, stored_pass = line.strip().split(":")
+            try:
+                stored_user, _ = line.strip().split(":")
+            except ValueError:
+                file.write(line)
+                continue
             if stored_user == username:
                 found = True
                 while True:
@@ -107,12 +116,12 @@ def forgot_password():
                     file.write(f"{username}:{new_password}\n")
                     print("Password updated successfully")
                     break
-                else:
+                  else:
                     print("Invalid password format. Try again")
             else:
                 file.write(line)
 
-        if not found:
+    if not found:
             print("Email ID not found. Please register.")
 
 
