@@ -1,4 +1,4 @@
-🔐 Python Login System
+# 🔐 Python Login System
 
 This is a simple Login and Registration System built using Python.  
 It allows users to register, login, and reset their password.  
@@ -6,7 +6,7 @@ User data is stored in a text file.
 
 ---
 
-📌 Features
+# 📌 Features
 
 - Register new user  
 - Login with email and password  
@@ -17,7 +17,7 @@ User data is stored in a text file.
 
 ---
 
-🛠 Technologies Used
+# 🛠 Technologies Used
 
 - Python  
 - File Handling  
@@ -25,7 +25,7 @@ User data is stored in a text file.
 
 ---
 
-📂 How It Works
+# 📂 How It Works
 
 - User details are stored in a file called `users.txt`
 - Data is saved in this format:
@@ -37,7 +37,7 @@ email:password
 
 ---
 
-🔒 Password Rules
+# 🔒 Password Rules
 
 Password must:
 
@@ -52,7 +52,7 @@ Suhail@123
 
 ---
 
-▶️ How to Run
+# ▶️ How to Run
 
 1. Install Python  
 2. Run the file:
@@ -61,7 +61,7 @@ python main.py
 
 ---
 
-👤 Author
+# 👤 Author
 
 Md Suhail  
 
